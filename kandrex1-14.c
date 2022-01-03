@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void main(){
+//void main(){
 
 /* im a fucking failure and skipped this one
 because it was difficult and so was the last and 
@@ -107,4 +107,3 @@ int main(void)
 }
 
 
-}
