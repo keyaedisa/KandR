@@ -4,9 +4,9 @@
 int fetchLine(char line[], int maxline);
 void copy(char to[], char from[]);
 
-char *tempLineHolder[MAXLINE];
+char* tempLineHolder[MAXLINE];
 
-/* print the longest input*/
+/*print the longest input*/
 
 int main(){
     int len;                        /* current line length */
@@ -34,7 +34,7 @@ int main(){
         printf("\n");
         printf("Longest line: %s", longest);
         for(int j = 0; j < MAXLINE && lineLengthStorage[j] != 0; ++j){
-            printf("Line number:%d had a length of:%d characters. It reads as follows: %s\n", j+1, lineLengthStorage[j]-1, tempLineHolder[j]);
+            printf("Line number:%d had a length of:%d characters. It reads as follows: %d\n", j+1, lineLengthStorage[j]-1, *tempLineHolder[j]);
         }
     }
     return 0;
@@ -48,11 +48,11 @@ int fetchLine(char s[],int lim){
 
     for (i=0; i < lim-1 && (c=getchar())!=EOF && c!='\n'; ++i){
         s[i] = c;
-        tempLineHolder[i] = c;
+        *tempLineHolder[i] = c;
     }
     if (c == '\n') {
         s[i] = c;
-        tempLineHolder[i] = c;
+        //*tempLineHolder[i] = c;
         ++i;
     }
 s[i] = '\0';
