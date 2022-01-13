@@ -13,10 +13,6 @@ void printCurrentLine(int lineNumber);
 
 char lineStorage[MAXLINE][MAXLINE];     /* stores whole lines for later*/
 int lineNumber = 0;
-//int z = 0;
-/*print the longest input*/
-
-
 
 
 int main(){
@@ -27,7 +23,7 @@ int main(){
     char longest[MAXLINE];          /* longest line saved here */
     
     
-    printf("hello, world\n");
+    printf("Enter your text below to have it analyzed and returned to you.\n");
 
     int i = 0; 
     max = 0;
@@ -37,7 +33,6 @@ int main(){
         ++lineNumber;
         lineLengthStorage[i] = len;
         ++i;
-        //++z;
 
         if (len > max) {
             max = len;
@@ -53,9 +48,8 @@ int main(){
             printf("Line number %d had a length of %d characters.\n", j+1, lineLengthStorage[j]-1);
             printCurrentLine(j);
         }
-
     }
-     return 0;
+    return 0;
 }
 
 
@@ -86,10 +80,8 @@ void copy(char to[], char from[]){
 }
 
 // addToStorage: adds LINE too lineStorage
-
 void addToStorage(char line[]){
-    int z = 0;
-    
+    int z = 0;    
     while(line[z] != '\n'){
         lineStorage[lineNumber][z] = line[z];
         ++z;
@@ -99,7 +91,6 @@ void addToStorage(char line[]){
 }
 
 // printCurrentLine: prints line it was called on
-
 void printCurrentLine(int lineNumber){
     printf("Line reads as follows: ");
     int z = 0;
