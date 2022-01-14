@@ -2,15 +2,10 @@
 /* Exercise 1.15. Rewrite the temperature 
 conversion program of Section 1.2 to use a 
 function for conversion. */
-
 void fahrToCelsius();
-
 void main(){
-
 fahrToCelsius();
-
 }
-
 void fahrToCelsius(){
     float fahr, celsius;
     float lower, upper, step;
