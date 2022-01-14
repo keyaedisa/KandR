@@ -23,7 +23,7 @@ int main(){
     char longest[MAXLINE];          /* longest line saved here */
     
     
-    printf("Enter your text below to have it analyzed and returned to you.\n");
+    printf("Enter your text below to have it analyzed and returned to you.\n\n");
 
     int i = 0; 
     max = 0;
