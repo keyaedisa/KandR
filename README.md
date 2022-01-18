@@ -1,7 +1,5 @@
 # K and R Home
 
-*got real messy all of a sudden. will organize when i feel like it*
-
 This is where I have pushed all my K and R work that I was working on locally to github in order to keep track of progress better.
 
 
