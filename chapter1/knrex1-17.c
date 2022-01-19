@@ -12,31 +12,71 @@ int lineNumber = 0;
 char lineStorage[MAXLINE][MAXLINE];
 char line[MAXLINE];
 
-void lineSaver();
+void lineSaver(char c);
+void printLinesOverEighty();
 
 
-void main(){
-
-    while(leave != TRUE){
-        lineSaver();
-    }
-
-    printf("nice");
-
-    
-}
-
-void lineSaver(){
+int main(){
     char c;
     while((c = getchar()) != EOF){
+        lineSaver(c);
+    }
+    /*
+    int p, f = 0;
+    while(lineStorage[f][p] != '\n'){
+        printf("%c", lineStorage[f][p]);
+        ++p;
+    }
+    printf("\n");
+    ++f;
+    p = 0;
+    while(lineStorage[f][p] != '\n'){
+        printf("%c", lineStorage[f][p]);
+        ++p;
+    }
+    printf("\n");
+    ++f;
+    p = 0;
+    while(lineStorage[f][p] != '\n'){
+        printf("%c", lineStorage[f][p]);
+        ++p;
+    }
+
+    //printLinesOverEighty();
+
+    //printf("nice\n");
+    */
+    return 0;
+}
+
+void lineSaver(char c){
+    int x = 0;
+    while(c != '\n'){
         int z = 0;
         while((c = getchar()) != '\n'){
             lineStorage[lineNumber][z] = c;
             ++z;
-        }
-        ++z;
-        lineStorage[lineNumber][z] = '\n';
-        ++lineNumber;    
+            ++x;
+        }    
+        lineStorage[lineNumber][x] = '\n';        
+        ++lineNumber;
+            
     }
+    lineStorage[lineNumber][0] = '\0';
     leave = TRUE;
+}
+
+void printLinesOverEighty(){
+    int y = 0; // iterators
+
+    while(lineStorage[lineNumber][0] != '\0'){
+        
+        while(lineStorage[lineNumber][y] != '\n'){
+            printf("%c", lineStorage[lineNumber][y]);
+            ++y;
+        }
+        
+        printf("\n");
+        ++lineNumber;
+    }
 }
