@@ -12,9 +12,11 @@
 
 int main(){
     char lineStorage[MAXLINE][MAXLINE];
-    printf("Enter your lines below. Only those longer than 80 will be printed.\n");
+    printf("Enter your lines below. Only those longer than 80 will be printed.\n\n");
     lineSaver(lineStorage);
-    printLinesOverEighty(lineStorage);
+    //puts(lineStorage[0]);
+    printLines(lineStorage);
+    //printLinesOverEighty(lineStorage);
 
    
     return 0;
