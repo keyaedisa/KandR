@@ -21,21 +21,6 @@ void lineSaver(char (*destinationArray)[MAXLINE]){
        }
     }
     destinationArray[lineNumber][0] = '\0';
-    /*
-    int lineNumber = 0;
-    char c;
-    int x;
-    for(x = 0; x < MAXLINE && (c = getchar())!=EOF; ++x){
-        if(c != '\n'){
-        destinationArray[lineNumber][x] = c;
-        }
-        if(c == '\n'){
-            destinationArray[lineNumber][x] = c;
-            ++lineNumber;
-        }
-    } printf("%d", x);
-    destinationArray[lineNumber-1][x+1] = '\0';
-    */
 }
 // Prints lines from array, line by line, with max 1000 length
 void printLines(char (*inputArray)[MAXLINE]){
@@ -46,24 +31,6 @@ void printLines(char (*inputArray)[MAXLINE]){
         puts(inputArray[x]);
         printf("\n\n");
     }
-
-    /*
-    for(int x, y = 0; x < MAXLINE && inputArray[x][y] != '\0'; ++x){
-        printf("Line Number %d reads:\n\n", x+1);
-        while(inputArray[x][y] != '\n'){
-            printf("%c", inputArray[x][y]);
-            ++y;
-        }
-        printf("\n\n\n");
-        y = 0;
-        if(inputArray[lineNumber][y] != '\n'){
-            printf("%c", inputArray[lineNumber][y]);
-        }
-        if(inputArray[lineNumber][y] == '\n'){
-            printf("\n");
-            ++lineNumber;
-            y = 0;
-    } */
 }
      
 
