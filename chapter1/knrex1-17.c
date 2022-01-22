@@ -5,7 +5,9 @@
 ** all input lines that are longer than 80 characters. 
 */
 
-
+/* Abandonding this because I realized that I am jus spending
+way too much time on this and im not even close since i tried way
+2 hard. so yea. i fucked this one up lol */
 
 
 
@@ -16,7 +18,7 @@ int main(){
     lineSaver(lineStorage);
     //puts(lineStorage[0]);
     printLines(lineStorage);
-    //printLinesOverEighty(lineStorage);
+    
 
    
     return 0;
