@@ -5,7 +5,6 @@
 
 int main(){
     char lineStorage[MAXLINE][MAXLINE];
-
     lineSaver(lineStorage);
     for(int x = 0; lineStorage[x][0] != '\0'; ++x){
         for(int y = 0; lineStorage[x][y]!= '\n' && lineStorage[x][0]!='\n'; ++y){
