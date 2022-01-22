@@ -28,3 +28,24 @@ void printLines(char (*inputArray)[MAXLINE]){
         printf("\n\n");
     }
 }
+
+void reverses(){
+    char c;
+    char currentLine[MAXLINE];
+    int x;
+    
+    for(x = 0; (c = getchar())!= EOF; ++x){
+        if(c != '\n'){
+            currentLine[x] = c;
+        }
+        if(c == '\n'){
+            --x;
+            printf("\n");
+            while(x >= 0){
+                printf("%c", currentLine[x]);
+                --x;
+            }
+            printf("\n\n");
+        }
+    }    
+}
