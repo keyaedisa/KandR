@@ -1,5 +1,9 @@
 #include <stdio.h>
 
+/* this is a file i use for quick tests so i dont need make new file
+** i jus rewrite when necessary
+*/
+
 //In a word or not
 #define IN 1
 #define OUT 0
