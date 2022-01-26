@@ -18,3 +18,5 @@ Feel free too look at these for inspiration but do not clone. You cannot learn b
 # MISC
 
 Starting 1.13 I decided to commit to not looking at solutions until after I successfully accomplished what I believed the book was asking me to do. This caused me to get really burnt out while I adjusted and so I skipped 1.13 and 1.14 due to overcomplicating things so much that I realized I would have to likely start from scratch to complete it.
+
+I am very proud of the solutions I have produced since.
