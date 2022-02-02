@@ -51,33 +51,3 @@ void reverses(){
         }
     }    
 }
-
-void detab(){
-    char c;
-    char currentLine[MAXLINE];
-    
-    for(int x, y, z = 0; (c = getchar())!= EOF; ++x){
-        if(c != '\n'){
-            currentLine[x] = c;
-        }
-        if(c == TAB){
-            y = x;
-            while(y < TABSIZE){
-                currentLine[y] = SPACE;
-            }
-            x = x + y;
-            y = 0;
-        }
-        if(c == '\n'){
-            currentLine[x] = c;
-            ++x;
-            printf("\n");
-            while(currentLine[z]!='\n'){
-                printf("%c", currentLine[y]);
-                ++z;
-            }
-            z = x;
-            printf("\n\n");
-        }
-    }      
-}
