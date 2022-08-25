@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include "myFunctions.h"
 
-#define lim 1000
 
 /* write a loop equivalent to the for loop
 above without using && or || 
@@ -12,7 +11,7 @@ s[i]=c;
 */
 
 int main(){
-    char line[lim];
+    char line[MAXLINE];
     lineSaver(line);
     printLines(line);
 

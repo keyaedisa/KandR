@@ -6,7 +6,8 @@
 	],
 	"settings": {
 		"files.associations": {
-			"myfunctions.h": "c"
+			"myfunctions.h": "c",
+			"stdio.h": "c"
 		}
 	}
 }
