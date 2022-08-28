@@ -13,6 +13,7 @@ int getsline(char s[],int lim);
 void copy(char to[], char from[]);
 void delSame(char *s1, const char *s2);
 int any(const char*,const char*);
+void intDecimalToBinary(unsigned x);
 
 // Saves lines into array, line by line, with max 1000 length
 void lineSaver(char *(destinationArray)[MAXLINE]){  
@@ -41,6 +42,7 @@ void printLines(char *(inputArray)[MAXLINE]){
     }
 }
 
+// i think this reverses strings. idek
 void reverses(){
     char c;
     char currentLine[MAXLINE];
@@ -60,7 +62,6 @@ void reverses(){
         }
     }    
 }
-
 
 /* getline:  read a line into s, return length  */
 int getsline(char s[],int lim){
@@ -85,6 +86,7 @@ void copy(char to[], char from[]){
         ++i;
 }
 
+// deletes any charcter in s1 that is also in s2
 void delSame(char *s1, const char *s2){
     int i, j, k;
     k = 0;
@@ -97,6 +99,7 @@ void delSame(char *s1, const char *s2){
     }    
 }
 
+// returns the first position in s1 that has any character thats in s2, returns -1 if  nothing match
 int any(const char *s1,const char *s2){
     int ret = -1;
     int i, k;
@@ -108,4 +111,31 @@ int any(const char *s1,const char *s2){
             }
     } while(s2[++i] != '\0');
     return ret;
+}
+
+// turns unsigned int decimal into binary
+void intDecimalToBinary(unsigned x){
+    int binary[32];
+    for(int z = 0; z < sizeof(binary)/sizeof(int); z++)
+        binary[z] = 0;
+    int i;
+    i = 31;
+    while(x != 0){
+        if(x % 2 != 0){
+            binary[i] = 1;
+            i--;
+        }
+        else { 
+            binary[i] = 0;
+            i--;
+        }
+        // printf("%d\n",x); for debugging, checks x each go around
+        x = x / 2;
+    }
+    for(int j = 0; j < sizeof(binary)/sizeof(int); j++){
+        if(j % 4 == 0 && j != 0)
+            printf(" ");
+        printf("%d",binary[j]);
+    }
+    printf("\n");
 }

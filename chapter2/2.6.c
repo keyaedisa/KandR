@@ -14,12 +14,14 @@ unsigned getbits(unsigned x, int p, int n)
 }
 
 unsigned setBits(unsigned x, int p, int n, unsigned y){
-
+    unsigned mask = 1;
 }
 
 
 int main(){
-unsigned x = 9713;
-unsigned bits = getbits(x,0,0);
+unsigned x = 100;
+intDecimalToBinary(100);
+unsigned bits = getbits(x,5,4);
+intDecimalToBinary(bits);
 printf("%u",bits);
 }

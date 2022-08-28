@@ -1,11 +1,6 @@
 #include <stdio.h>
 #include "myFunctions.h"
 
-/*
-void intDecimalToBinary(unsigned x){
-
-}
-*/
 
 /* getbits:  get n bits from position p */
 unsigned getbits(unsigned x, int p, int n)
@@ -14,6 +9,7 @@ unsigned getbits(unsigned x, int p, int n)
 }
 
 int main(){
-    //printf("%lu",sizeof(long));
+    printf("%lu\n",sizeof(int));
+    printf("%lu\n",sizeof(unsigned));
     
 }
