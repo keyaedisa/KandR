@@ -115,11 +115,11 @@ int any(const char *s1,const char *s2){
 
 // turns unsigned int decimal into binary
 void intDecimalToBinary(unsigned x){
-    int binary[32];
+    int binary[16];
     for(int z = 0; z < sizeof(binary)/sizeof(int); z++)
         binary[z] = 0;
     int i;
-    i = 31;
+    i = 15;
     while(x != 0){
         if(x % 2 != 0){
             binary[i] = 1;
