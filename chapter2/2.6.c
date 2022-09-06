@@ -15,7 +15,7 @@ unsigned getbits(unsigned x, int p, int n)
 
 unsigned setBits(unsigned x, int p, int n, unsigned y){
     unsigned mask = 0;
-    
+    y = y << (p+1-n)
 }
 
 
@@ -24,5 +24,10 @@ unsigned x = 100;
 intDecimalToBinary(0);
 unsigned bits = getbits(x,5,4);
 intDecimalToBinary(bits);
-printf("%u",bits);
+printf("%u\n",bits);
+unsigned p = 34;
+unsigned g = 19;
+p = p & g;
+printf("%u\n",p);
+printf("%d\n",p);
 }
