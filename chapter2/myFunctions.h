@@ -115,6 +115,7 @@ int any(const char *s1,const char *s2){
 
 // turns unsigned int decimal into binary
 void intDecimalToBinary(unsigned x){
+    fprintf(stdout, "%d %s", x, "in binary is: ");
     int binary[16];
     for(int z = 0; z < sizeof(binary)/sizeof(int); z++)
         binary[z] = 0;
