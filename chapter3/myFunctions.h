@@ -14,6 +14,7 @@ void copy(char to[], char from[]);
 void delSame(char *s1, const char *s2);
 int any(const char*,const char*);
 void intDecimalToBinary(unsigned x);
+unsigned setBits(unsigned x, int p, int n, unsigned y);
 
 // Saves lines into array, line by line, with max 1000 length
 void lineSaver(char *(destinationArray)[MAXLINE]){  
@@ -115,12 +116,13 @@ int any(const char *s1,const char *s2){
 
 // turns unsigned int decimal into binary
 void intDecimalToBinary(unsigned x){
-    fprintf(stdout, "%d %s", x, "in binary is: ");
-    int binary[16];
-    for(int z = 0; z < sizeof(binary)/sizeof(int); z++)
+    unsigned y = x;
+    unsigned size = sizeof(x)*8;
+    unsigned binary[size];
+    //hsize_t *binaryPtr = &binary;
+    for(unsigned z = 0; z < sizeof(binary)/sizeof(binary[0]); z++)
         binary[z] = 0;
-    int i;
-    i = 15;
+    unsigned i = (sizeof(x)*8-1);
     while(x != 0){
         if(x % 2 != 0){
             binary[i] = 1;
@@ -133,10 +135,29 @@ void intDecimalToBinary(unsigned x){
         // printf("%d\n",x); for debugging, checks x each go around
         x = x / 2;
     }
-    for(int j = 0; j < sizeof(binary)/sizeof(int); j++){
+    for(unsigned j = 0; j < sizeof(binary)/sizeof(binary[0]); j++){
         if(j % 4 == 0 && j != 0)
             printf(" ");
-        printf("%d",binary[j]);
+        printf("%u",binary[j]);
     }
+    fprintf(stdout, "%s %u and %#010x"," is binary for ",y,y);
     printf("\n");
+    //return binary;
+}
+
+/* setBits: returns x with the n bits beginning at position p set to the 
+rightmost n bits of y, leaving the other bits unchanged*/
+unsigned setBits(unsigned x, int p, int n, unsigned y){
+    //unsigned rightBits = x << (p -)
+    fprintf(stdout,"%s\n%s%d%s%d%s%d%s%d%s%d%s\n","=========================",\
+    "Returning ",x," with the ",n," rightmost bits replaced with the ",n,\
+    " rightmost bits of ",y," starting at position: ",p," with the furthest rightmost bit represented as 0.");
+    unsigned mask = ~(~0 << n) << (p-n+1);
+    intDecimalToBinary(x);
+    intDecimalToBinary(y);
+    //x &= ~mask;
+    //intDecimalToBinary(x);
+    fprintf(stdout,"%s","Return value!");
+    fprintf(stdout,"%s\n","=========================");
+    return((x & ~mask) | (y & mask));
 }

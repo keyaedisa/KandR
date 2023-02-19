@@ -16,9 +16,8 @@ unsigned getbits(unsigned x, int p, int n)
 }
 
 /* setBits: returns x with the n bits beginning at position p set to the 
-rightmost n bits of y, leaving the other bits unchanged*/
-unsigned setBits(unsigned x, int p, int n, unsigned y){
-    //unsigned rightBits = x << (p -)
+rightmost n bits of y, leaving the other bits unchanged
+void setBits(unsigned x, int p, int n, unsigned y){
     fprintf(stdout,"%s\n%s%d%s%d%s%d%s%d%s%d%s\n","=========================", \ 
     "Returning ",x," with the ",n," rightmost bits replaced with the ",n, \
     " rightmost bits of ",y," starting at position: ",p," with the furthest rightmost bit represented as 0.");
@@ -30,13 +29,12 @@ unsigned setBits(unsigned x, int p, int n, unsigned y){
     x |= (y & mask);
     intDecimalToBinary(x);
     fprintf(stdout,"%s\n","=========================");
-    
-}
+} */
 
 int main(){
 unsigned x = 37492;
 unsigned y = 4789;
-setBits(x,7,4,y);
+printf("%lu\n",setBits(x,7,4,y));
 setBits(x,6,4,y);
 setBits(x,5,3,y);
 setBits(x,4,5,y);
